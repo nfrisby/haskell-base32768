@@ -1,6 +1,7 @@
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
 
+-- | See @test-src/test.html@ for the intended use.
 module Main (main) where
 
 import Data.Base32768 (encode)
@@ -17,7 +18,7 @@ main = do
     n <- fmap (map readMaybe) getArgs >>= \case
       [Just n] | 0 <= n -> pure (n :: Int)
       _                 ->
-          fail "expecting exactly one argument, a non-negative interger"
+          fail "expecting exactly one argument, a non-negative integer"
 
     putStr "const testCases = ["
 
