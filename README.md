@@ -1,5 +1,10 @@
 A Haskell implementation of https://github.com/qntm/base32768.
-There's no innovation here, beyond a translation into Haskell idioms.
+There's no important innovation here, just a translation into Haskell idioms with some "obvious" optimizations.
+
+# No `decode` (yet?)
+
+For my use case, I don't need `decode`.
+Neither would most Haskell use-cases, since the ecosystem strongly favors UTF-8; this codec is most likely used to export `ByteString`s from Haskell.
 
 # Motivation
 
@@ -43,11 +48,6 @@ So I need to encode my data as a UTF-16 string in order to avoid it being re-enc
 The space-efficiency requirement disqualifies the well-known `base64` alternative --- see the comparison table at https://github.com/qntm/base32768.
 
 Hence this Haskell package, since my data happens to originate in Haskell.
-
-# No `decode` (yet?)
-
-For my use case, I don't need `decode`.
-Neither would most Haskell use-cases, since the ecosystem strongly favors UTF-8.
 
 # Testing
 

@@ -1,6 +1,6 @@
 cabal-version:      3.0
 name:               base32768
-version:            0.1.0.0
+version:            0.1.0.1
 synopsis:           qntm's base32768 encoder
 description:        See <https://github.com/qntm/base32768>
 license:            MIT
@@ -17,7 +17,7 @@ tested-with: GHC==8.10.7
 
 source-repository head
   type:     git
-  location: https://github.com/nfrisby/base32768
+  location: https://github.com/nfrisby/haskell-base32768
 
 common shared
     ghc-options: -Wall -Wprepositive-qualified-module
