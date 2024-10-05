@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<body>
+
+<ul>
+<li>Save <code>https://github.com/qntm/base32768/raw/56fabfb7c5c06d3151aeb2594505966c3adf4460/src/index.js</code> as <code>qntm.js</code> besides this <code>test.html</code> file.</li>
+<li>Delete the <code>export</code> line from <code>qntm.js</code>.</li>
+<li><code>cabal build exe:generate-base32768-test-cases && cabal run exe:generate-base32768-test-cases 100 >testCases.js</code>, alongside this <code>test.html</code> file.</li>
+<li>Refresh this page.</li>
+<li>Check the JavaScript console for the status.</li>
+</ul>
+
+<script src="qntm.js"></script>
+
+<script>document.write("<p>Now parsing <code>testCases.js</code> ...</p>")</script>
+
+<script src="testCases.js"></script>
+
+<script>
+document.write("<p>Now testing " + testCases.length + " cases...</p>")
+var count = 0
+testCases.forEach(function (testCase, icase) {
+  const uint8s  = new Uint8Array(testCase[0])
+  const attempt = testCase[1]
+  
+  const reference = encode(uint8s)
+
+  if (attempt != reference) {
+    ++count
+    document.write("<p>Disagreement for case " + icase + "!")
+    document.write("<p><code>" + attempt + "</code></p>");
+    document.write("<p><code>" + reference + "</code></p>");
+    document.write("<p><code>" + uint8s + "</code></p>");
+  }
+})
+document.write("<p>Done; " + count + " disagreements.</p>")
+</script>
+
+</body>
+</html>
