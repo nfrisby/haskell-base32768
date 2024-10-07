@@ -1,5 +1,10 @@
 A Haskell implementation of https://github.com/qntm/base32768.
-There's no important innovation here, just a translation into Haskell idioms with some "obvious" optimizations.
+
+# Attribution
+
+The Base32768 encoding was originally created by @qntm.
+This package is merely a simple re-implementation of it in Haskell.
+There's no important innovation here, just an idiomatic translation and a couple "obvious" (ie unmeasured) optimizations.
 
 # No `decode` (yet?)
 
